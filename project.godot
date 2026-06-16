@@ -26,9 +26,13 @@ general/max_line_length=35
 
 runtime/balloon_path="res:///balloon.tscn"
 
+[dialogue_manager_counter]
+
+general/max_line_length=35
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_length/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_length/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/dialogue_manager_counter/plugin.cfg")
 
 [internationalization]
 

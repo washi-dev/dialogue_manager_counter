@@ -18,6 +18,7 @@ func _register_project_settings():
 		"hint": PROPERTY_HINT_RANGE,
 		"hint_string": "1,200,1"
 	})
+	ProjectSettings.set_as_basic("dialogue_manager_counter/general/max_line_length", true)
 
 func _exit_tree():
 	if dock:
