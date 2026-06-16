@@ -20,7 +20,7 @@ DialogueManager="*uid://c3rodes2l3gxb"
 
 [dialogue_length]
 
-max_line_length=60
+general/max_line_length=35
 
 [dialogue_manager]
 
