@@ -7,6 +7,17 @@ var main_view: Control = null
 
 func _enter_tree():
 	connect("main_screen_changed", Callable(self, "_on_main_screen_changed"))
+	_register_project_settings()
+
+func _register_project_settings():
+	if not ProjectSettings.has_setting("dialogue_length/max_line_length"):
+		ProjectSettings.set_setting("dialogue_length/max_line_length", 35)
+	ProjectSettings.add_property_info({
+		"name": "dialogue_length/max_line_length",
+		"type": TYPE_INT,
+		"hint": PROPERTY_HINT_RANGE,
+		"hint_string": "1,200,1"
+	})
 
 func _exit_tree():
 	if dock:

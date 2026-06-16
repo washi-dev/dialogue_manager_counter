@@ -2,7 +2,8 @@
 extends Control
 
 @onready var dialogue_length = $"."  # RichTextLabelを想定
-const MAX_LINE_LENGTH = 35
+var MAX_LINE_LENGTH: int:
+	get: return ProjectSettings.get_setting("dialogue_length/max_line_length", 35)
 
 var _line_output := ""
 var _total_count := 0
