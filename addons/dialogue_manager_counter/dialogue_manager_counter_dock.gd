@@ -3,7 +3,7 @@ extends Control
 
 @onready var dialogue_length = $"."  # RichTextLabelを想定
 var MAX_LINE_LENGTH: int:
-	get: return ProjectSettings.get_setting("dialogue_length/general/max_line_length", 35)
+	get: return ProjectSettings.get_setting("dialogue_manager_counter/general/max_line_length", 35)
 
 var _line_output := ""
 var _total_count := 0
@@ -13,7 +13,7 @@ func update_line_length(line_text: String, is_h_scene: bool = false) -> void:
 	_is_h_scene = is_h_scene
 	var counts := []
 
-	# 話者形式（例：果乃: や 果乃：）をチェックして除去
+	# 話者形式（名前: や 名前：）をチェックして除去
 	var speaker_regex := RegEx.new()
 	speaker_regex.compile("^[^:：]{1,10}[:：]\\s?")  # 名前（1〜10文字）＋コロン＋空白（任意）
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://01ju3fyys32e"]
 
-[ext_resource type="Script" uid="uid://m6ub1x5g0duk" path="res://addons/dialogue_length/dialogue_length_dock.gd" id="1_lkkpj"]
+[ext_resource type="Script" uid="uid://m6ub1x5g0duk" path="res://addons/dialogue_manager_counter/dialogue_manager_counter_dock.gd" id="1_lkkpj"]
 
 [node name="会話文字数" type="RichTextLabel" unique_id=1853327215]
 offset_right = 200.0

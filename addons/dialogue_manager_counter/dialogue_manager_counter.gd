@@ -10,15 +10,10 @@ func _enter_tree():
 	_register_project_settings()
 
 func _register_project_settings():
-	# 旧パスを削除
-	for old_key in ["dialogue_length/max_line_length", "dialogue_length/limit/max_line_length", "dialogue_length/limits/max_line_length"]:
-		if ProjectSettings.has_setting(old_key):
-			ProjectSettings.clear(old_key)
-
-	if not ProjectSettings.has_setting("dialogue_length/general/max_line_length"):
-		ProjectSettings.set_setting("dialogue_length/general/max_line_length", 35)
+	if not ProjectSettings.has_setting("dialogue_manager_counter/general/max_line_length"):
+		ProjectSettings.set_setting("dialogue_manager_counter/general/max_line_length", 35)
 	ProjectSettings.add_property_info({
-		"name": "dialogue_length/general/max_line_length",
+		"name": "dialogue_manager_counter/general/max_line_length",
 		"type": TYPE_INT,
 		"hint": PROPERTY_HINT_RANGE,
 		"hint_string": "1,200,1"
@@ -39,7 +34,7 @@ func _exit_tree():
 func _on_main_screen_changed(screen_name: String):
 	if screen_name.to_lower() == "dialogue":
 		if dock == null:
-			dock = preload("res://addons/dialogue_length/dialogue_length.tscn").instantiate()
+			dock = preload("res://addons/dialogue_manager_counter/dialogue_manager_counter.tscn").instantiate()
 			add_control_to_dock(DOCK_SLOT_RIGHT_UL, dock)
 
 		_update_text_edit()
