@@ -23,9 +23,3 @@ dialogue_manager/
 
 # Terminal Paste Image folder
 .cp-images/
-
-test.dialogue
-.editorconfig
-.gitattributes
-icon.svg
-project.godot
