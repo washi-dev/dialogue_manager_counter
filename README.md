@@ -39,8 +39,55 @@ Dialogue Manager の編集画面を開くと、右上のドックに文字数が
 
 ## 設定
 
-`プロジェクト > プロジェクト設定` を開くと `Dialogue Manager Counter > General` カテゴリが表示されます。
+`プロジェクト > プロジェクト設定` の `Dialogue Manager Counter > 一般` にて、設定変更が可能です。
 
 | 設定項目 | 説明 | デフォルト値 |
 |---|---|---|
 | Max Line Length | 1行あたりの最大文字数。超過した行を赤字で警告します。 | 35 |
+
+---
+
+A character count plugin for the [Dialogue Manager](https://github.com/nathanhoad/godot_dialogue_manager) addon.
+While editing a dialogue file, it displays the character count of each line at the cursor position and the total character count of the entire file in real time.
+
+## Requirements
+
+- Godot 4.x
+- [Dialogue Manager](https://github.com/nathanhoad/godot_dialogue_manager) addon
+
+## Installation
+
+1. Copy the `addons/dialogue_manager_counter` folder into your project's `addons/` directory.
+2. Open `Project > Project Settings > Plugins` and enable **Dialogue Manager Counter**.
+
+## Usage
+
+When you open the Dialogue Manager editor, character counts are automatically displayed in the dock at the top right.
+
+- Shows the character count for each line at the cursor position. If the line contains `\n` line breaks, they are split and counted individually.
+- Lines that exceed the maximum character limit are highlighted in red.
+- Displays the total character count of all dialogue lines in the entire file.
+
+## Character Count Rules
+
+The following are excluded from the character count.
+
+| Excluded Content | Example |
+|---|---|
+| Control tags | `[wave]`, `[speed=2]`, etc. in `[...]` format |
+| Speaker names | The name part before the colon, e.g. `Alice: ` or `Alice：` |
+| Comment lines | `# comment` |
+| Title lines | `~ title` |
+| Jumps | `=> END` |
+| Conditionals | `if`, `elif`, `else` |
+| Variable operations | `do`, `set` |
+| Choices | `- choice text` |
+| Empty lines |
+
+## Settings
+
+Open `Project > Project Settings` to find the `Dialogue Manager Counter > General` category.
+
+| Setting | Description | Default |
+|---|---|---|
+| Max Line Length | Maximum number of characters per line. Lines that exceed this limit are highlighted in red as a warning. | 35 |
